@@ -8,13 +8,13 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 
 function Footer() {
   return (
-    <footer className="footer bg-gray-900 relative pt-2 border-b-2 border-blue-700">
+    <footer className="footer bg-gray-900 relative pt-2 border-b-2 border-blue-700 pt-5">
       <div className="md:px-4 lg:px-4 xl:py-8 xxl:py-10">
         <div className="flex flex-row justify-center">
           <GoodsUmpireIcon />
         </div>
         <div className="my-8 md:mx-6 lg:mx-8 xl:mx-10 xxl:mx-12">
-          <div className="justify-between flex flex-row justify-between">
+          <div className="justify-between flex flex-col md:flex-row lg:flex-row xl:flex-row xxl:flex-row justify-between">
             <div className="flex flex-col">
               <span className="text-xl lg:text-2xl xl:text-3xl xxl:4xl font-bold text-gray-600 uppercase mb-2">
                 Hello Mate!

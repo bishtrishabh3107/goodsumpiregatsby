@@ -87,7 +87,7 @@ function ProductPage({
           <motion.div variants={backVariants}>
             <div className="px-5 font-bold py-5">
               <div className="product-description-font text-left lg:text-lg xl:text-xl xxl:text-2xl">
-                <h1 className="mb-2 text-2xl">
+                <h1 className="mb-3 text-2xl -mt-3">
                   <Link to="/">
                     <HiOutlineBackspace />
                   </Link>
@@ -99,16 +99,16 @@ function ProductPage({
               <div className="mt-4 text-left text-xs lg:text-lg xl:text-xl xxl:text-2xl">
                 <h1>Popularity:</h1>
                 <div className="">
-                  <Progress colorScheme="yellow" value={rating1} />
+                  <Progress colorScheme="yellow" size="sm" value={rating1} />
                 </div>
               </div>
               <div className="mt-2 text-left text-xs lg:text-lg xl:text-xl xxl:text-2xl">
                 <h1>Usefullness: </h1>
-                <Progress colorScheme="blue" value={rating2} />
+                <Progress colorScheme="blue" size="sm" value={rating2} />
               </div>
               <div className="mt-2 text-left text-xs lg:text-lg xl:text-xl xxl:text-2xl">
                 <h1>Buyability:</h1>
-                <Progress colorScheme="green" value={rating3} />
+                <Progress colorScheme="green" size="sm" value={rating3} />
               </div>
               <div className="flex flex-row justify-evenly mt-4">
                 <div className="flex flex-row text-xs lg:text-lg xl:text-xl xxl:text-2xl">

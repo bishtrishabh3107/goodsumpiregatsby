@@ -35,7 +35,7 @@ function CenterScreen() {
     },
   }
   return (
-    <div>
+    <div className="mx-3">
       <div className="flex flex-row justify-center goodsumpire-font uppercase font-semibold lg:text-lg xl:text-xl xxl:text-5xl">
         <h1>
           <ReactTextTransition

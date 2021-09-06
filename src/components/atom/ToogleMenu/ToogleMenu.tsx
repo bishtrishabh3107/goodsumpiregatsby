@@ -148,10 +148,14 @@ export const ToogleMenu = () => {
                 </AnchorLink>
               </li>
               <li key="6" className="item">
-                Advertise
+                <a href="https://wa.me/9690806397" target="_blank">
+                  Advertise
+                </a>
               </li>
               <li key="7" className="item">
-                Sell Products
+                <a href="https://wa.me/9690806397" target="_blank">
+                  Sell on Goods Umpire
+                </a>
               </li>
             </ul>
           </motion.div>

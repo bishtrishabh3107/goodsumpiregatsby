@@ -23,13 +23,13 @@ function ProductMainScreenCard({ uid, image1, name, productID }) {
           <motion.div variants={thumbnailVariants}>
             <Link className="flex flex-col" to={`/products/${uid}`}>
               <motion.div
-                className="flex flex-col"
+                className="flex flex-col shadow-lg"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <GatsbyImage image={getImage(image1)} alt={name} />
               </motion.div>
-              <div className="product-card-name-font lg:text-lg xl:text-xl xxl:text-2xl uppercase font-semibold my-2">
+              <div className="product-card-name-font lg:text-sm xl:text-xl xxl:text-2xl uppercase font-semibold my-2">
                 <h1>{name}</h1>
               </div>
             </Link>
