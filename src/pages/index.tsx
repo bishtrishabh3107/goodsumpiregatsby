@@ -1,13 +1,15 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/Global/Layout"
-import FirstScreen from "../components/organ/FirstScreen"
-import SecondScreen from "../components/organ/SecondScreen"
-import ThirdScreen from "../components/organ/ThirdScreen"
-import FourthScreen from "../components/organ/FourthScreen"
-import FifthScreen from "../components/organ/FifthScreen"
 import { motion } from "framer-motion"
-import SixthScreen from "../components/organ/SixthScreen"
+import EcoFriendlyScreen from "../components/organ/EcoFriendlyScreen"
+import TopKnotchScreen from "../components/organ/TopKnotchScreen"
+import HatKeScreen from "../components/organ/HatKeScreen"
+import ElectronicsScreen from "../components/organ/ElectronicsScreen"
+import HomeDecorScreen from "../components/organ/HomeDecorScreen"
+import PortableScreen from "../components/organ/PortableScreen"
+import FirstScreen from "../components/organ/FirstScreen"
+import ProductOfTheWeek from "../components/organ/ProductOfTheWeek"
 
 const IndexPage = () => {
   const data = useStaticQuery(query)
@@ -21,27 +23,20 @@ const IndexPage = () => {
         transition={{ duration: 1 }}
       >
         <FirstScreen />
-
-        <hr></hr>
-        <section id="EcoFriendly">
-          <SecondScreen />
-        </section>
-        <hr></hr>
-        <section id="HatKeProducts">
-          <ThirdScreen />
-        </section>
-        <hr></hr>
-        <section id="TopKnotchProducts">
-          <FourthScreen />
-        </section>
-        <hr></hr>
-        <section id="PortableProducts">
-          <FifthScreen />
-        </section>
-        <hr></hr>
-        <section id="MonthsSpecial">
-          <SixthScreen />
-        </section>
+        <hr className="border-2"></hr>
+        <EcoFriendlyScreen />
+        <hr className="border-2"></hr>
+        <ElectronicsScreen />
+        <hr className="border-2"></hr>
+        <HomeDecorScreen />
+        <hr className="border-2"></hr>
+        <PortableScreen />
+        <hr className="border-2"></hr>
+        <HatKeScreen />
+        <hr className="border-2"></hr>
+        <TopKnotchScreen />
+        <hr className="border-2"></hr>
+        <ProductOfTheWeek />
       </motion.div>
     </Layout>
   )

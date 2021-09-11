@@ -57,6 +57,22 @@ exports.createResolvers = ({
       },
     },
   })
+  createResolvers({
+    StrapiProduct: {
+      AO_image_Child: {
+        type: `File`,
+        resolve(source, args, context, info) {
+          return createRemoteFileNode({
+            url: `${source.AO_Image.url}`,
+            store,
+            cache,
+            createNode,
+            createNodeId,
+          })
+        },
+      },
+    },
+  })
 }
 
 const { slugify } = require("./src/assets/utilityFunctions")

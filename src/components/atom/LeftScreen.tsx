@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import "../../assets/styles/index.scss"
 import { motion } from "framer-motion"
-import ProductMainScreenCard from "../atom/ProductMainScreenCard"
+import ProductMainScreenCard1 from "./ProductMainScreenCard1"
 import ReactTextTransition, { presets } from "react-text-transition"
 
 const TEXTS = ["HAT KE PRODUCTs", "UNIQUE PRODUCTS", "HIDDEN GEMS"]
@@ -31,7 +31,7 @@ function LeftScreen() {
   }
   return (
     <div>
-      <div className="flex flex-row justify-center goodsumpire-font uppercase font-semibold lg:text-lg xl:text-xl xxl:text-5xl">
+      <div className="flex flex-row justify-center goodsumpire-font uppercase font-semibold lg:text-md xl:text-lg 2xl:text-4xl">
         <h1>
           <ReactTextTransition
             text={TEXTS[index % TEXTS.length]}
@@ -55,13 +55,14 @@ function LeftScreen() {
                 {data.allStrapiProduct.edges.map(({ node }) => (
                   <div key={node.productID} className="mb-6 mt-2">
                     <motion.div variants={thumbnailVariants}>
-                      <ProductMainScreenCard
+                      <ProductMainScreenCard1
                         uid={node.uid}
                         productID={node.productID}
                         image1={
                           node.image1_Child.childImageSharp.gatsbyImageData
                         }
                         name={node.name}
+                        description_short={node.description_short}
                       />
                     </motion.div>
                   </div>
@@ -89,12 +90,13 @@ const LeftScreenQuery = graphql`
           name
           uid
           productID
+          description_short
           image1_Child {
             childImageSharp {
               gatsbyImageData(
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
-                aspectRatio: 2.33333333333
+                aspectRatio: 1.2
                 layout: CONSTRAINED
                 transformOptions: { cropFocus: CENTER }
               )

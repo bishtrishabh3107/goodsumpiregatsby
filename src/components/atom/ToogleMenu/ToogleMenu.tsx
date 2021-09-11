@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import "../../../assets/styles/index.scss"
 import { graphql, StaticQuery } from "gatsby"
-import AnchorLink from "react-anchor-link-smooth-scroll"
 import { Link } from "gatsby"
 
 const Path = props => (
@@ -15,7 +14,7 @@ const Path = props => (
   />
 )
 
-const MenuButton = ({ onClick, isOpen }) => {
+const MenuButton1 = ({ onClick, isOpen }) => {
   return (
     <motion.button
       className="menu-button"
@@ -71,7 +70,7 @@ const slideVerticalAnimation = {
   },
   close: {
     rotateX: -15,
-    y: -320,
+    y: -330,
     opacity: 0,
     transition: {
       duration: 0.3,
@@ -84,13 +83,13 @@ const slideVerticalAnimation = {
 
 const slideHorizontalAnimation = {
   left: {
-    x: 0,
+    x: -30,
     transition: {
       duration: 0.3,
     },
   },
   right: {
-    x: -280,
+    x: -310,
     transition: {
       duration: 0.3,
     },
@@ -106,7 +105,7 @@ export const ToogleMenu = () => {
 
   return (
     <div className="wrapper">
-      <MenuButton onClick={() => toggleDropdown(!isOpen)} isOpen={isOpen} />
+      <MenuButton1 onClick={() => toggleDropdown(!isOpen)} isOpen={isOpen} />
 
       <motion.div
         className="dropdown-container"
@@ -122,48 +121,7 @@ export const ToogleMenu = () => {
           variants={slideHorizontalAnimation}
         >
           <motion.div className="menu menu-categories">
-            <h4 onClick={() => toggleMenu(!isLeftMenu)}>
-              Month's Special &#8594;
-            </h4>
-            <ul className="item-list">
-              <li key="1" className="item">
-                <AnchorLink href="#MonthsSpecial">Month's Special</AnchorLink>
-              </li>
-              <li key="2" className="item">
-                <AnchorLink href="#TopKnotchProducts">
-                  Top Knotch Products
-                </AnchorLink>
-              </li>
-              <li key="3" className="item">
-                <AnchorLink href="#PortableProducts">
-                  Portable Products
-                </AnchorLink>
-              </li>
-              <li key="4" className="item">
-                <AnchorLink href="#HatKeProducts">Hat Ke Products</AnchorLink>
-              </li>
-              <li key="5" className="item">
-                <AnchorLink href="#EcoFriendly">
-                  Eco Friendly Products
-                </AnchorLink>
-              </li>
-              <li key="6" className="item">
-                <a href="https://wa.me/9690806397" target="_blank">
-                  Advertise
-                </a>
-              </li>
-              <li key="7" className="item">
-                <a href="https://wa.me/9690806397" target="_blank">
-                  Sell on Goods Umpire
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-          <motion.div className="menu menu-sizes">
-            <h4 onClick={() => toggleMenu(!isLeftMenu)}>
-              {"    "}
-              &#8592; Navigate To
-            </h4>
+            <h4 onClick={() => toggleMenu(!isLeftMenu)}>Navigate To &#8594;</h4>
             <ul className="item-list">
               <StaticQuery
                 query={MonthsSpecialQuery}
@@ -179,6 +137,39 @@ export const ToogleMenu = () => {
                   )
                 }}
               />
+            </ul>
+          </motion.div>
+          <motion.div className="menu menu-sizes">
+            <h4 onClick={() => toggleMenu(!isLeftMenu)}>
+              {"    "}
+              &#8592; Month's Special
+            </h4>
+            <ul className="item-list">
+              <li key="1" className="item">
+                <Link to="/ecofriendlyproducts/">Eco Friendly Products</Link>
+              </li>
+              <li key="2" className="item">
+                <Link to="/electronicproducts/">Electronic Products</Link>
+              </li>
+              <li key="3" className="item">
+                <Link to="/homedecorproducts/">Home Decor Products</Link>
+              </li>
+              <li key="4" className="item">
+                Hat Ke Products
+              </li>
+              <li key="5" className="item">
+                Eco Friendly Products
+              </li>
+              <li key="6" className="item">
+                <a href="https://wa.me/9690806397" target="_blank">
+                  Advertise
+                </a>
+              </li>
+              <li key="7" className="item">
+                <a href="https://wa.me/9690806397" target="_blank">
+                  Sell on Goods Umpire
+                </a>
+              </li>
             </ul>
           </motion.div>
         </motion.div>

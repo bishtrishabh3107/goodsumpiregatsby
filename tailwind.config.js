@@ -1,5 +1,8 @@
 module.exports = {
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  purge: [
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: "class",
   important: true,
   theme: {
@@ -18,7 +21,7 @@ module.exports = {
         md: { min: "426px", max: "768px" },
         lg: { min: "769px", max: "1024px" },
         xl: { min: "1025px", max: "1440px" },
-        xxl: { min: "1441px", max: "3000px" },
+        "2xl": { min: "1441px", max: "3000px" },
       },
     },
   },

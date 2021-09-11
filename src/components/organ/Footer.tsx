@@ -72,7 +72,7 @@ function Footer() {
                   className="text-blue-700 text-md lg:text-xl xl:text-2xl xxl:3xl hover:text-blue-500"
                   target="_blank"
                 >
-                  <SiGmail className="twitter-icon" size="2em" />
+                  <SiGmail className="twitter-icon" size="1em" />
                 </a>
               </span>
               <span className="my-2">
@@ -81,7 +81,7 @@ function Footer() {
                   className="text-blue-700 text-md lg:text-xl xl:text-2xl xxl:3xl hover:text-blue-500"
                   target="_blank"
                 >
-                  <FaFacebook className="facebook-icon" size="2em" />
+                  <FaFacebook className="facebook-icon" size="1em" />
                 </a>
               </span>
               <span className="my-2">
@@ -90,7 +90,7 @@ function Footer() {
                   className="text-blue-700 text-md lg:text-xl xl:text-2xl xxl:3xl hover:text-blue-500"
                   target="_blank"
                 >
-                  <FaInstagram className="instagram-icon" size="2em" />
+                  <FaInstagram className="instagram-icon" size="1em" />
                 </a>
               </span>
             </div>

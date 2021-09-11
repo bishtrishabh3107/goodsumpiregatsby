@@ -23,7 +23,7 @@ const Layout = ({ children, seo }) => {
         }
       `}
       render={data => (
-        <div className="text-main-text text-center transition-all duration-500 min-h-screen m-2">
+        <div className="text-main-text text-center transition-all duration-500 min-h-screen m-2 sm:mx-4 md:mx-10 lg:mx-16 xl:mx-20 xxl:mx-24">
           <Seo seo={seo} />
 
           <div className="mb-24">

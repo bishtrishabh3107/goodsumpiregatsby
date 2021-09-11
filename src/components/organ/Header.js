@@ -19,7 +19,7 @@ function Header() {
         <div className="flex flex-row justify-center">
           <GoodsUmpireIcon />
         </div>
-        <div className="fixed top-8 right-3 z-50 lg:top-10 xl:top-11 xxl:top-12">
+        <div className="fixed top-6 right-3 z-50 lg:top-10 xl:top-11 xxl:top-12">
           <ThemeToggler>
             {({ theme, toggleTheme }) => (
               <div>

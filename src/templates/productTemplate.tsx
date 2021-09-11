@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Global/Layout"
 import ProductPage from "../components/ProductPage"
-import SecondScreen from "../components/organ/SecondScreen"
-import FifthScreen from "../components/organ/FifthScreen"
+import EcoFriendlyScreen from "../components/organ/EcoFriendlyScreen"
+import HatKeScreen from "../components/organ/HatKeScreen"
 import { motion } from "framer-motion"
 
 export const query = graphql`
@@ -13,6 +13,7 @@ export const query = graphql`
         node {
           name
           uid
+          description_short
           description
           keywords
           productID
@@ -27,8 +28,6 @@ export const query = graphql`
               gatsbyImageData(
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
-                width: 500
-                height: 400
                 layout: CONSTRAINED
                 transformOptions: { cropFocus: CENTER }
               )
@@ -39,8 +38,6 @@ export const query = graphql`
               gatsbyImageData(
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
-                width: 500
-                height: 400
                 layout: CONSTRAINED
                 transformOptions: { cropFocus: CENTER }
               )
@@ -51,8 +48,20 @@ export const query = graphql`
               gatsbyImageData(
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
-                width: 500
-                height: 400
+                layout: CONSTRAINED
+                transformOptions: { cropFocus: CENTER }
+              )
+            }
+          }
+          AO_Name
+          AO_Price
+          AO_Link
+          AO_Description
+          AO_image_Child {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
                 layout: CONSTRAINED
                 transformOptions: { cropFocus: CENTER }
               )
@@ -70,7 +79,6 @@ export const query = graphql`
           gatsbyImageData(
             placeholder: BLURRED
             formats: [AUTO, WEBP, AVIF]
-            aspectRatio: 2.33333333333
             layout: CONSTRAINED
             transformOptions: { cropFocus: CENTER }
           )
@@ -123,6 +131,7 @@ const ProductTemplate = ({ data }) => {
                   image1={node.image1_Child.childImageSharp.gatsbyImageData}
                   image2={node.image2_Child.childImageSharp.gatsbyImageData}
                   image3={node.image3_Child.childImageSharp.gatsbyImageData}
+                  description_short={node.description_short}
                   description={node.description}
                   rating1={node.rating1}
                   rating2={node.rating2}
@@ -130,13 +139,21 @@ const ProductTemplate = ({ data }) => {
                   amazon_price={node.amazon_price}
                   amazon_link={node.amazon_link}
                   date={node.date}
+                  AO_Name={node.AO_Name}
+                  AO_Price={node.AO_Price}
+                  AO_Link={node.AO_Link}
+                  AO_Description={node.AO_Description}
+                  AO_image_Child={
+                    node.AO_image_Child.childImageSharp.gatsbyImageData
+                  }
                 />
               </div>
             ))}
           </div>
-          <SecondScreen />
-          <hr></hr>
-          <FifthScreen />
+          <hr className="border-2"></hr>
+          <EcoFriendlyScreen />
+          <hr className="border-2"></hr>
+          <HatKeScreen />
         </div>
       </motion.div>
     </Layout>

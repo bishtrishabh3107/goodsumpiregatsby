@@ -1,18 +1,14 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import "../../assets/styles/index.scss"
-import ProductMainScreenCard from "../atom/ProductMainScreenCard"
 import { motion } from "framer-motion"
-import { GiStarSwirl } from "react-icons/gi"
+import ProductMainScreenCard2 from "../atom/ProductMainScreenCard2"
+import { BsFillAwardFill } from "react-icons/bs"
 import ReactTextTransition, { presets } from "react-text-transition"
 
-const TEXTS = [
-  "PRODUCTS OF SEPTEMBER",
-  "PRODUCTS OF THIS MONTH",
-  "MONTH'S SPECIAL",
-]
+const TEXTS = ["HAT KE PRODUCTs", "UNIQUE PRODUCTS", "HIDDEN GEMS"]
 
-function SixthScreen() {
+function HatKeScreen() {
   const [index, setIndex] = React.useState(0)
 
   React.useEffect(() => {
@@ -35,19 +31,21 @@ function SixthScreen() {
     },
   }
   return (
-    <div className="my-5 my-5">
-      <h1 className="flex flex-row justify-center goodsumpire-font uppercase font-extrabold text-sm lg:text-lg xl:text-xl xxl:text-8xl">
+    <div className="my-5 lg:my-4 xl:my-6 2xl:my-10">
+      <h1 className="flex flex-row justify-start goodsumpire-font uppercase font-extrabold text-sm lg:text-lg xl:text-xl 2xl:text-5xl">
         <ReactTextTransition
           text={TEXTS[index % TEXTS.length]}
           springConfig={presets.wobbly}
         />
+
         <div className="text-green-500 flex flex-row mx-1 mt-1">
-          <GiStarSwirl />
-          <GiStarSwirl />
+          <BsFillAwardFill />
+          <BsFillAwardFill />
         </div>
       </h1>
+
       <StaticQuery
-        query={SixthScreenQuery}
+        query={ThirdScreenQuery}
         render={data => {
           return (
             <>
@@ -58,17 +56,19 @@ function SixthScreen() {
                 exit="exit"
                 variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
               >
-                <div className="sm:mx-2 md:mx-4 lg:mx-10 my-5 grid grid-cols-3">
+                <div className="sm:mx-6 md:mx-10 lg:mx-14 xl:mx-16 xxl:mx-20 my-5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 xxl:grid-cols-4 gap-4">
                   {data.allStrapiProduct.edges.map(({ node }) => (
-                    <div key={node.productID} className="m-2">
+                    <div className="m-2" key={node.productID}>
                       <motion.div variants={thumbnailVariants}>
-                        <ProductMainScreenCard
+                        <ProductMainScreenCard2
                           uid={node.uid}
                           productID={node.productID}
                           image1={
                             node.image1_Child.childImageSharp.gatsbyImageData
                           }
                           name={node.name}
+                          date={node.date}
+                          description_short={node.description_short}
                         />
                       </motion.div>
                     </div>
@@ -83,15 +83,16 @@ function SixthScreen() {
   )
 }
 
-export default SixthScreen
+export default HatKeScreen
 
-const SixthScreenQuery = graphql`
+const ThirdScreenQuery = graphql`
   {
     allStrapiProduct(
       filter: {
-        categories: { elemMatch: { name: { eq: "Product Of This Week" } } }
+        categories: { elemMatch: { name: { eq: "Hat Ke Products" } } }
+        inSpotlight: { eq: false }
       }
-      limit: 6
+      limit: 3
       sort: { fields: date, order: ASC }
     ) {
       edges {
@@ -99,12 +100,14 @@ const SixthScreenQuery = graphql`
           name
           uid
           productID
+          description_short
+          date
           image1_Child {
             childImageSharp {
               gatsbyImageData(
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
-                aspectRatio: 2.4
+                aspectRatio: 0.9
                 layout: CONSTRAINED
                 transformOptions: { cropFocus: CENTER }
               )
