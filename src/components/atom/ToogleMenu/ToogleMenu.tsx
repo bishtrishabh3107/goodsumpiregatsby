@@ -3,6 +3,11 @@ import { motion } from "framer-motion"
 import "../../../assets/styles/index.scss"
 import { graphql, StaticQuery } from "gatsby"
 import { Link } from "gatsby"
+import ElectronicsCategoryHover from "./ElectronicsCategoryHover"
+import EcoFriendlyCategoryHover from "./EcoFriendlyCategoryHover"
+import HomeDecorCategoryHover from "./HomeDecorCategoryHover"
+import PortableCategoryHover from "./PortableCategoryHover"
+import HatKeCategoryHover from "./HatKeCategoryHover"
 
 const Path = props => (
   <motion.path
@@ -146,19 +151,25 @@ export const ToogleMenu = () => {
             </h4>
             <ul className="item-list">
               <li key="1" className="item">
-                <Link to="/ecofriendlyproducts/">Eco Friendly Products</Link>
+                <Link to="/ecofriendlyproducts/">
+                  <EcoFriendlyCategoryHover />
+                </Link>
               </li>
               <li key="2" className="item">
-                <Link to="/electronicproducts/">Electronic Products</Link>
+                <Link to="/electronicproducts/">
+                  <ElectronicsCategoryHover />
+                </Link>
               </li>
               <li key="3" className="item">
-                <Link to="/homedecorproducts/">Home Decor Products</Link>
+                <Link to="/homedecorproducts/">
+                  <HomeDecorCategoryHover />
+                </Link>
               </li>
               <li key="4" className="item">
-                Hat Ke Products
+                <HatKeCategoryHover />
               </li>
               <li key="5" className="item">
-                Eco Friendly Products
+                <PortableCategoryHover />
               </li>
               <li key="6" className="item">
                 <a href="https://wa.me/9690806397" target="_blank">

@@ -9,6 +9,7 @@ module.exports = {
     extend: {},
   },
   variants: {
+    display: ["group-hover"],
     extend: {
       colors: {
         primary: "var(--primary)",

@@ -65,7 +65,7 @@ const CenterScreenQuery = graphql`
       filter: {
         categories: { elemMatch: { name: { eq: "Product Of This Week" } } }
       }
-      limit: 3
+      limit: 6
       sort: { fields: createdAt, order: ASC }
     ) {
       edges {
