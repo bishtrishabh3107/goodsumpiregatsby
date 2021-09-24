@@ -8,6 +8,8 @@ import EcoFriendlyCategoryHover from "./EcoFriendlyCategoryHover"
 import HomeDecorCategoryHover from "./HomeDecorCategoryHover"
 import PortableCategoryHover from "./PortableCategoryHover"
 import HatKeCategoryHover from "./HatKeCategoryHover"
+import ThisFestivalCategoryHover from "./ThisFestivalCategoryHover"
+import TopKnotchCategoryHover from "./TopKnotchCategoryHover"
 
 const Path = props => (
   <motion.path
@@ -166,11 +168,20 @@ export const ToogleMenu = () => {
                 </Link>
               </li>
               <li key="4" className="item">
-                <HatKeCategoryHover />
+                <Link to="/thisFestival/">
+                  <ThisFestivalCategoryHover />
+                </Link>
               </li>
               <li key="5" className="item">
+                <HatKeCategoryHover />
+              </li>
+              <li key="6" className="item">
                 <PortableCategoryHover />
               </li>
+              <li key="7" className="item">
+                <TopKnotchCategoryHover />
+              </li>
+
               <li key="6" className="item">
                 <a href="https://wa.me/9690806397" target="_blank">
                   Advertise
@@ -195,7 +206,7 @@ const MonthsSpecialQuery = graphql`
       filter: {
         categories: { elemMatch: { name: { eq: "Product Of This Week" } } }
       }
-      limit: 4
+      limit: 6
       sort: { fields: createdAt, order: ASC }
     ) {
       edges {

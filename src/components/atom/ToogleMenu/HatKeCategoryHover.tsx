@@ -23,11 +23,11 @@ function HatKeCategoryHover() {
   `
 
   return (
-    <div className="inline-block relative group z-10">
+    <div className="inline-block relative group">
       <div className="font-semibold px-4 py-1 rounded inline-flex items-center">
-        Hat Ke Products
+        Hat Ke
       </div>
-      <div className="w-96 absolute hidden bg-white text-black -ml-3 -mt-2 group-hover:block z-10">
+      <div className="w-80 absolute hidden bg-blue-600 text-white -ml-3 px-1 group-hover:block z-100">
         <StaticQuery
           query={CategoriesHover}
           render={data => {
@@ -35,7 +35,7 @@ function HatKeCategoryHover() {
               <>
                 {data.allStrapiProduct.edges.map(({ node }) => (
                   <div key={node.productID}>
-                    <div className="hover:bg-black hover:text-white text-xs z-40 my-1">
+                    <div className="hover:bg-black hover:text-white text-xs z-100 my-1">
                       <Link to={`/products/${node.uid}`}>{node.name}</Link>
                     </div>
                   </div>

@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/Global/Layout"
-import { motion } from "framer-motion"
 import EcoFriendlyScreen from "../components/organ/EcoFriendlyScreen"
 import TopKnotchScreen from "../components/organ/TopKnotchScreen"
 import HatKeScreen from "../components/organ/HatKeScreen"
@@ -10,19 +9,17 @@ import HomeDecorScreen from "../components/organ/HomeDecorScreen"
 import PortableScreen from "../components/organ/PortableScreen"
 import FirstScreen from "../components/organ/FirstScreen"
 import ProductOfTheWeek from "../components/organ/ProductOfTheWeek"
+import ThisFestival from "../components/organ/ThisFestival"
 
 const IndexPage = () => {
   const data = useStaticQuery(query)
 
   return (
     <Layout seo={data.strapiGlobal.seo}>
-      <motion.div
-        exit={{ opacity: 0 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="pt-7">
         <FirstScreen />
+        <hr className="border-2"></hr>
+        <ThisFestival />
         <hr className="border-2"></hr>
         <EcoFriendlyScreen />
         <hr className="border-2"></hr>
@@ -37,7 +34,7 @@ const IndexPage = () => {
         <TopKnotchScreen />
         <hr className="border-2"></hr>
         <ProductOfTheWeek />
-      </motion.div>
+      </div>
     </Layout>
   )
 }

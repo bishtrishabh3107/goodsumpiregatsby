@@ -91,37 +91,37 @@ $darker: #090909;
     flex: 1;
     text-align: center;
     cursor: pointer;
-    line-height: 2rem;
+    line-height: 0.9rem;
     transition: all 0.2s;
-    color: #18ebfa;
+    color: #1872fa;
     margin-left: 2px;
     margin-right: 2px;
     padding: 0px 0px;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     &:hover {
-      background: white;
-      color: $dark;
+      background: #1872fa;
+      color: rgb(245, 182, 11);
     }
   }
   .item2 {
     flex: 1;
     text-align: center;
     cursor: pointer;
-    line-height: 2rem;
+    line-height: 1rem;
     transition: all 0.2s;
-    color: rgb(19, 235, 235);
+    color: rgb(255, 192, 17);
     margin-left: 10px;
     margin-right: 1px;
     padding: 0px 1rem;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     width: 16rem;
 
     &:hover {
-      background: white;
-      color: $dark;
+      background: rgb(27, 94, 105);
+      color: rgb(235, 195, 19);
     }
   }
 }

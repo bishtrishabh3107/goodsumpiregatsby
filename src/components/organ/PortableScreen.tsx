@@ -116,7 +116,7 @@ const FifthScreenQuery = graphql`
         inSpotlight: { eq: false }
       }
       limit: 3
-      sort: { fields: date, order: ASC }
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {

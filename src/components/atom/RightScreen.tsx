@@ -82,8 +82,8 @@ const RightScreenQuery = graphql`
       filter: {
         categories: { elemMatch: { name: { eq: "Top Knotch Quality" } } }
       }
-      limit: 4
-      sort: { fields: date, order: ASC }
+      limit: 5
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {

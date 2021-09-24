@@ -28,7 +28,18 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-HY207MQRFY", // Google Analytics / GA
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-strapi`,
       options: {

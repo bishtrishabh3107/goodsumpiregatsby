@@ -122,7 +122,7 @@ const ProductTemplate = ({ data }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col pt-14">
           <div className="-mt-20 px-2 mb-10">
             {data.allStrapiProduct.edges.map(({ node }) => (
               <div key={node.productID}>

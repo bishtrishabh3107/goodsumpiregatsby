@@ -120,7 +120,7 @@ const SixthScreenQuery = graphql`
         inSpotlight: { eq: false }
       }
       limit: 4
-      sort: { fields: date, order: ASC }
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {

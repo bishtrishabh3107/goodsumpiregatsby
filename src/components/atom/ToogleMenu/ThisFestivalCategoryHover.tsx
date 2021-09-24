@@ -3,11 +3,13 @@ import { graphql, StaticQuery } from "gatsby"
 import "../../../assets/styles/index.scss"
 import { Link } from "gatsby"
 
-function HomeDecorCategoryHover() {
+function ThisFestivalCategoryHover() {
   const CategoriesHover = graphql`
     query {
       allStrapiProduct(
-        filter: { categories: { elemMatch: { name: { eq: "Home Decor" } } } }
+        filter: {
+          categories: { elemMatch: { name: { eq: "This Festival Seasons" } } }
+        }
       ) {
         edges {
           node {
@@ -23,7 +25,7 @@ function HomeDecorCategoryHover() {
   return (
     <div className="inline-block relative group">
       <div className="font-semibold px-4 py-1 rounded inline-flex items-center">
-        Home Decor
+        This Festival
       </div>
       <div className="w-80 absolute hidden bg-blue-600 text-white -ml-3 px-1 group-hover:block z-100">
         <StaticQuery
@@ -47,4 +49,4 @@ function HomeDecorCategoryHover() {
   )
 }
 
-export default HomeDecorCategoryHover
+export default ThisFestivalCategoryHover

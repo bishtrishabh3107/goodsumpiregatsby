@@ -82,8 +82,8 @@ const LeftScreenQuery = graphql`
   {
     allStrapiProduct(
       filter: { categories: { elemMatch: { name: { eq: "Hat Ke Products" } } } }
-      limit: 4
-      sort: { fields: date, order: ASC }
+      limit: 5
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {

@@ -5,6 +5,7 @@ import Seo from "./seo"
 import Header from "../organ/Header"
 import Footer from "../organ/Footer"
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button"
+import { ToogleMenuButtons } from "../atom/ToogleMenu/ToogleMenuButtons"
 
 const Layout = ({ children, seo }) => {
   return (
@@ -29,16 +30,19 @@ const Layout = ({ children, seo }) => {
           <div className="mb-24">
             <Header />
           </div>
-
-          <main>{children}</main>
-
+          <div className="-mt-20 mb-10">
+            <ToogleMenuButtons />
+          </div>
+          <div className="px-2 md:px-4 lg:px-6 xl:px-10 2xl:px-14">
+            <main>{children}</main>
+          </div>
           <Footer />
           <div className="">
             <ScrollUpButton
               StopPosition={0}
               ShowAtPosition={150}
               EasingType="easeOutCubic"
-              AnimationDuration={500}
+              AnimationDuration={1900}
               ContainerClassName="ScrollUpButton__Container"
               TransitionClassName="ScrollUpButton__Toggled"
               style={{}}

@@ -97,9 +97,15 @@ function ProductPage({
             <div className="px-3 font-bold py-1 md:py-2 lg:py-4 xl:py-5 2xl:py-6">
               <div>
                 <h1 className="mb-3 text-2xl md:-mt-3 lg:-mt-1 xl:-mt-1 2xl:-mt-1 2xl:text-4xl">
-                  <Link to="/">
-                    <HiOutlineBackspace />
-                  </Link>
+                  <motion.div
+                    initial={{ x: 1000 }}
+                    animate={{ x: 0 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Link to="/">
+                      <HiOutlineBackspace />
+                    </Link>
+                  </motion.div>
                 </h1>
                 <h1 className="product-description-font text-left lg:text-md xl:text-md 2xl:text-3xl mt-2 2xl:mt-4">
                   <ReactMarkdown>{description}</ReactMarkdown>
@@ -131,9 +137,15 @@ function ProductPage({
                 <div className="flex flex-row text-xs lg:text-md xl:text-md 2xl:text-3xl">
                   <h1>Buy From:</h1>
                   <div className="m-1 mx-2 2xl:mx-4 text-yellow-500 text-xs lg:text-md xl:text-md 2xl:text-3xl">
-                    <a href={`${amazon_link}`} target="_blank">
-                      <ImAmazon />
-                    </a>
+                    <motion.div
+                      initial={{ x: 1000 }}
+                      animate={{ x: 0 }}
+                      whileHover={{ scale: 1.4 }}
+                    >
+                      <a href={`${amazon_link}`} target="_blank">
+                        <ImAmazon />
+                      </a>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -165,9 +177,15 @@ function ProductPage({
           </div>
           <div className="pl-2 font-bold py-1 md:py-2 lg:py-4 xl:py-5 xxl:py-6">
             <h1 className="mb-2 md:mb-3 lg:mb-5 xl:mb-8 xxl:mb-10 text-2xl 2xl:text-4xl">
-              <Link to="/">
-                <HiOutlineBackspace />
-              </Link>
+              <motion.div
+                initial={{ x: 1000 }}
+                animate={{ x: 0 }}
+                whileHover={{ scale: 1.04 }}
+              >
+                <Link to="/">
+                  <HiOutlineBackspace />
+                </Link>
+              </motion.div>
             </h1>
             <h1 className="product-description-font text-left lg:text-md xl:text-md 2xl:text-3xl mb-3 md:mb-4 lg:mb-5 xl:mb-8 2xl:mb-10">
               <ReactMarkdown>{AO_Description}</ReactMarkdown>
@@ -180,9 +198,15 @@ function ProductPage({
               <div className="flex flex-row justify-evenly text-xs lg:text-md xl:text-md 2xl:text-3xl mb-3 md:mb-4 lg:mb-5 xl:mb-8 2xl:mb-10">
                 <h1>Buy From:</h1>
                 <div className="mx-2 text-yellow-500 text-md lg:text-md xl:text-md 2xl:text-3xl">
-                  <a href={`${AO_Link}`} target="_blank">
-                    <ImAmazon />
-                  </a>
+                  <motion.div
+                    initial={{ x: 1000 }}
+                    animate={{ x: 0 }}
+                    whileHover={{ scale: 1.4 }}
+                  >
+                    <a href={`${AO_Link}`} target="_blank">
+                      <ImAmazon />
+                    </a>
+                  </motion.div>
                 </div>
               </div>
             </div>

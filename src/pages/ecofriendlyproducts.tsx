@@ -44,7 +44,7 @@ function ecofriendlyproducts() {
         transition={{ duration: 1 }}
       >
         <div>
-          <div className="my-4 -mt-16">
+          <div className="my-4 -mt-16 pt-14">
             <h1 className="flex flex-row justify-start goodsumpire-font uppercase font-extrabold text-sm lg:text-lg xl:text-xl 2xl:text-5xl">
               <ReactTextTransition
                 text={TEXTS[index % TEXTS.length]}

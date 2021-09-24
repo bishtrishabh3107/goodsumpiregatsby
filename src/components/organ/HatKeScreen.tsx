@@ -88,12 +88,9 @@ export default HatKeScreen
 const ThirdScreenQuery = graphql`
   {
     allStrapiProduct(
-      filter: {
-        categories: { elemMatch: { name: { eq: "Hat Ke Products" } } }
-        inSpotlight: { eq: false }
-      }
-      limit: 3
-      sort: { fields: date, order: ASC }
+      filter: { categories: { elemMatch: { name: { eq: "Hat Ke Products" } } } }
+      limit: 4
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {

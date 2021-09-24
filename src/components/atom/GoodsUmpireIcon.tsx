@@ -8,7 +8,7 @@ function GoodsUmpireIcon() {
   return (
     <div>
       <Link to="/">
-        <div className=" flex flex-row justify-center mt-2 md:-mt-1 lg:-mt-0 xl:-mt-1 2xl:mt-1">
+        <div className=" flex flex-row justify-center mt-1 md:-mt-1 lg:-mt-0 xl:-mt-1 2xl:mt-1">
           <h1 className="goodsumpire-font mx-1 my-2 text-yellow-500 font-bold border-b-2 border-blue-500 text-sm lg:text-sm xl:text-xl 2xl:text-5xl">
             GOODS{" "}
           </h1>

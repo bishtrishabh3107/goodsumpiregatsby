@@ -50,18 +50,3 @@ Header.defaultProps = {
 }
 
 export default Header
-
-// const HatKeProductsQuery = graphql`
-//   {
-//     allStrapiCategory(filter: { name: { eq: "Hat Ke Products" } }) {
-//       edges {
-//         node {
-//           products {
-//             name
-//             uid
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

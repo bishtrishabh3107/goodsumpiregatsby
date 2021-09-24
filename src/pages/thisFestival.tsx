@@ -7,13 +7,17 @@ import ProductMainScreenCard2 from "../components/atom/ProductMainScreenCard2"
 import ProductMainScreenCard3 from "../components/atom/ProductMainScreenCard3"
 import { GiLindenLeaf } from "react-icons/gi"
 import ReactTextTransition, { presets } from "react-text-transition"
-import EcoFriendlyScreen from "../components/organ/EcoFriendlyScreen"
+import PortableScreen from "../components/organ/PortableScreen"
 import HatKeScreen from "../components/organ/HatKeScreen"
 
-const TEXTS = ["ELECTRONIC PRODUCTS", "DIGITAL AGE PRODUCTS", "TECH PRODUCTS"]
+const TEXTS = [
+  "THIS FESTIVE SEASON",
+  "DIWALI SEASON",
+  "BRIGHT FESTIVAL PRODUCTS",
+]
 
-function electronicproducts() {
-  const data = useStaticQuery(SecondScreenQuery)
+function thisFestival() {
+  const data = useStaticQuery(thisFestivalQuery)
   const [index, setIndex] = React.useState(0)
 
   React.useEffect(() => {
@@ -53,7 +57,7 @@ function electronicproducts() {
               </div>
             </h1>
             <StaticQuery
-              query={SecondScreenQuery}
+              query={thisFestivalQuery}
               render={data => {
                 return (
                   <>
@@ -116,7 +120,7 @@ function electronicproducts() {
             />
           </div>
           <hr className="border-2"></hr>
-          <EcoFriendlyScreen />
+          <PortableScreen />
           <hr className="border-2"></hr>
           <HatKeScreen />
         </div>
@@ -125,13 +129,13 @@ function electronicproducts() {
   )
 }
 
-export default electronicproducts
+export default thisFestival
 
-const SecondScreenQuery = graphql`
+const thisFestivalQuery = graphql`
   {
     allStrapiProduct(
       filter: {
-        categories: { elemMatch: { name: { eq: "Electronics" } } }
+        categories: { elemMatch: { name: { eq: "This Festival Seasons" } } }
         inSpotlight: { eq: false }
       }
       sort: { fields: date, order: ASC }
@@ -159,7 +163,7 @@ const SecondScreenQuery = graphql`
     }
     strapiProduct(
       inSpotlight: { eq: true }
-      categories: { elemMatch: { name: { eq: "Electronics" } } }
+      categories: { elemMatch: { name: { eq: "This Festival Seasons" } } }
     ) {
       name
       uid

@@ -6,6 +6,7 @@ import ProductMainScreenCard3 from "../atom/ProductMainScreenCard3"
 import { motion } from "framer-motion"
 import { GiLindenLeaf } from "react-icons/gi"
 import ReactTextTransition, { presets } from "react-text-transition"
+import { Link } from "gatsby"
 
 const TEXTS = ["ELECTRONIC PRODUCTS", "DIGITAL AGE PRODUCTS", "TECH PRODUCTS"]
 
@@ -29,17 +30,19 @@ function ElectronicsScreen() {
   }
   return (
     <div className="my-5 lg:my-6 xl:my-8 2xl:my-10">
-      <h1 className="flex flex-row justify-start goodsumpire-font uppercase font-extrabold text-sm lg:text-lg xl:text-xl 2xl:text-5xl">
-        <ReactTextTransition
-          text={TEXTS[index % TEXTS.length]}
-          springConfig={presets.wobbly}
-        />
+      <Link to="/electronicproducts">
+        <h1 className="flex flex-row justify-start goodsumpire-font uppercase font-extrabold text-sm lg:text-lg xl:text-xl 2xl:text-5xl">
+          <ReactTextTransition
+            text={TEXTS[index % TEXTS.length]}
+            springConfig={presets.wobbly}
+          />
 
-        <div className="text-green-500 flex flex-row mx-1">
-          <GiLindenLeaf />
-          <GiLindenLeaf />
-        </div>
-      </h1>
+          <div className="text-green-500 flex flex-row mx-1">
+            <GiLindenLeaf />
+            <GiLindenLeaf />
+          </div>
+        </h1>
+      </Link>
       <StaticQuery
         query={ElectronicsScreenQuery}
         render={data => {
@@ -113,7 +116,7 @@ const ElectronicsScreenQuery = graphql`
         inSpotlight: { eq: false }
       }
       limit: 4
-      sort: { fields: date, order: ASC }
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {

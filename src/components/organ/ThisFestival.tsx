@@ -4,16 +4,17 @@ import "../../assets/styles/index.scss"
 import ProductMainScreenCard2 from "../atom/ProductMainScreenCard2"
 import ProductMainScreenCard3 from "../atom/ProductMainScreenCard3"
 import { motion } from "framer-motion"
-import { MdHighQuality } from "react-icons/md"
+import { GiStarSwirl } from "react-icons/gi"
 import ReactTextTransition, { presets } from "react-text-transition"
+import { Link } from "gatsby"
 
 const TEXTS = [
-  "TOP KNOTCH QUALITY PRODUCTS",
-  "BEST IN CLASS",
-  "QUALITY IN PRICE",
+  "THIS FESTIVE SEASON",
+  "DIWALI SEASON",
+  "BRIGHT FESTIVAL PRODUCTS",
 ]
 
-function TopKnotchScreen() {
+function ThisFestival() {
   const [index, setIndex] = React.useState(0)
 
   React.useEffect(() => {
@@ -29,27 +30,25 @@ function TopKnotchScreen() {
   const thumbnailVariants = {
     initial: { scale: 0.9, opacity: 0 },
     enter: { scale: 1, opacity: 1, transition },
-    exit: {
-      scale: 0.5,
-      opacity: 0,
-      transition: { duration: 1.5, ...transition },
-    },
+    exit: { scale: 0.5, opacity: 0, transition },
   }
   return (
     <div className="my-5 lg:my-6 xl:my-8 2xl:my-10">
-      <h1 className="flex flex-row justify-start goodsumpire-font uppercase font-extrabold text-sm lg:text-lg xl:text-xl 2xl:text-5xl">
-        <ReactTextTransition
-          text={TEXTS[index % TEXTS.length]}
-          springConfig={presets.wobbly}
-        />
-        <div className="text-green-500 flex flex-row mx-1 mt-1">
-          <MdHighQuality />
-          <MdHighQuality />
-        </div>
-      </h1>
+      <Link to="/thisFestival">
+        <h1 className="flex flex-row justify-start goodsumpire-font uppercase font-extrabold text-sm lg:text-lg xl:text-xl 2xl:text-5xl">
+          <ReactTextTransition
+            text={TEXTS[index % TEXTS.length]}
+            springConfig={presets.wobbly}
+          />
 
+          <div className="text-green-500 flex flex-row mx-1">
+            <GiStarSwirl />
+            <GiStarSwirl />
+          </div>
+        </h1>
+      </Link>
       <StaticQuery
-        query={FourthScreenQuery}
+        query={ThisFestivalQuery}
         render={data => {
           return (
             <>
@@ -60,11 +59,11 @@ function TopKnotchScreen() {
                 exit="exit"
                 variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
               >
-                <div className="sm:mx-6 md:mx-10 lg:mx-14 xl:mx-16 xxl:mx-20 my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2">
+                <div className="sm:mx-6 md:mx-10 lg:mx-14 xl:mx-16 2xl:mx-20 my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2">
                   <div>
                     <div
                       key={data.strapiProduct.productID}
-                      className="m-2 md:mx-2 lg:mx-4 xl:mx-6 xxl:mx-8"
+                      className="m-2 2xl:mr-5"
                     >
                       <motion.div variants={thumbnailVariants}>
                         <ProductMainScreenCard2
@@ -111,13 +110,13 @@ function TopKnotchScreen() {
   )
 }
 
-export default TopKnotchScreen
+export default ThisFestival
 
-const FourthScreenQuery = graphql`
+const ThisFestivalQuery = graphql`
   {
     allStrapiProduct(
       filter: {
-        categories: { elemMatch: { name: { eq: "Top Knotch Quality" } } }
+        categories: { elemMatch: { name: { eq: "This Festival Seasons" } } }
         inSpotlight: { eq: false }
       }
       limit: 4
@@ -146,7 +145,7 @@ const FourthScreenQuery = graphql`
     }
     strapiProduct(
       inSpotlight: { eq: true }
-      categories: { elemMatch: { name: { eq: "Top Knotch Quality" } } }
+      categories: { elemMatch: { name: { eq: "This Festival Seasons" } } }
     ) {
       name
       uid
